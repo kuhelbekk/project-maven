@@ -3,6 +3,8 @@ package com.javarush.games.racer;
 import com.javarush.engine.cell.*;
 import com.javarush.games.racer.road.RoadManager;
 
+import java.util.Iterator;
+
 public class RacerGame extends Game {
     public static final int WIDTH = 64;
     public static final int HEIGHT = 64;
@@ -31,6 +33,7 @@ public class RacerGame extends Game {
             drawScene();
             return;
         }
+
         roadManager.generateNewRoadObjects(this);
         if (roadManager.getPassedCarsCount() >= RACE_GOAL_CARS_COUNT) {
             finishLine.show();
